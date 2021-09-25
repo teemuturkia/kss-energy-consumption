@@ -1,0 +1,23 @@
+<div class="container">
+  <app-button-toolbar></app-button-toolbar>
+
+  <ng-container *ngIf="auth.isLoading$ | async; else loaded">
+    <div class="loader-wrapper">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+
+  <ng-template #loaded>
+    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <app-chart></app-chart>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #loggedOut>
+    <app-text-box>
+      Kirjaudu sisään sovellukseen.
+    </app-text-box>
+  </ng-template>
+
+</div>
+

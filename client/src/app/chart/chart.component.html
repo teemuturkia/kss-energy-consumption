@@ -1,0 +1,7 @@
+<canvas baseChart
+        *ngIf="!showWarning"
+        [data]="data"
+        [options]="lineChartOptions"
+        [type]="lineChartType">
+</canvas>
+<app-text-box *ngIf="showWarning">Kulutustietoja ei löytynyt. Lisää uusi tiedosto plus-napilla.</app-text-box>

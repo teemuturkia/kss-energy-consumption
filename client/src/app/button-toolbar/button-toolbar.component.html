@@ -1,0 +1,9 @@
+<ng-container *ngIf="!(auth.isLoading$ | async)">
+  <div>
+    <input type="file" #upload (change)="uploadFile($event)">
+    <button *ngIf="auth.isAuthenticated$ | async" mat-mini-fab color="primary" (click)="upload.click()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <app-auth-button></app-auth-button>
+  </div>
+</ng-container>
